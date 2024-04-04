@@ -99,6 +99,90 @@ Seuraava tehtävä tässä osiossa toimi hyvin samalla tavalla kun HTTP Basiceis
 
 ### d) Ratkaise ja selitä PortSwigger Labs: Lab: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data.
 
+Lähdin suorittamaan tehtävää ensiksi rekistöröitymällä sivustolle. SQL Injectio ei ollut lähtökohtaisesti itselle hirveän tuttua, tiesin jotenkin miten SQL koodia kirjoitetaan.
+Löysin https://portswigger.net/web-security/sql-injection/lab-retrieve-hidden-data sivustolta hyvän ohje videon, missä selitettiin kyseinen tehtävä aika perinpohjaisesti ja siitä sai vähän selkeyttä.
+Tämän jälkeen sain tehtävän suoritettua onnistuneesti. Tarkoituksena tehtävässä oli löytää haavoittuvaisuuksia ja muokkaamalla osoitekenttää saatiin esille piilotettua dataa aika helposti.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/910d7a01-85b6-4145-8f23-dfb35c71d65e)
+
+### f) Porttiskannaa 1000 tavallisinta tcp-porttia omasta koneestasi (localhost). Analysoi tulokset.
+
+Suoritin tehtävän samassa ympäristössä missä aikaisemmat eli Kali Linuxin terminaalissa. Käytin komentoa:
+
+        nmap 127.0.0.1
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/3c52ed16-9964-4184-96d9-52e63fe4cdac)
+
+- Ensimmäinen rivi kertoo sivuston mistä voi ladata nmapin, ajan millon se on käynnistetty sekä versionumeron.
+- Toinen rivi kertoo tavoiteltun ip-osoitteen ja myös dns:än jos sellainen löytyisi.
+- Kolmannella rivillä kerrotaan että Host on up ja sen vasteajan
+- Neljännellä rivillä selviää, että kaikki 1000 porttia on tilassa ignored
+- Viidennellä rivillä kerrotaan, että kaikki 1000 porttia löytyy mutta ne on suljettuna
+- Viimeinen rivi viestii siitä, että nmap komento on suoritettu ja missä ajassa
+
+
+### g) Porttiskannaa kaikki koneesi (localhost) tcp-portit. Analysoi tulokset.
+
+Kaikki portit sain skannattua komennolla:
+
+        sudo nmap -p- 127.0.0.1
+
+Muuten näkyi aikalailla samat tulokset, paitsi nyt näkyvillä oli kaikki mahdolliset portit.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/34e39170-9462-4793-ad72-a1f3994c2358)
+
+### h) Tee laaja porttiskanaus (nmap -A) omalle koneellesi (localhost), kaikki portit. Selitä, mitä -A tekee. Analysoi tulokset.
+
+Käytin komentoa:
+
+        sudo nmap -A -p- 127.0.0.1
+
+Kyseinen nmap -A komento tekee aggressiivisen porttiskannauksen kaikille porteille koneella. Tällä saa lisätietoa käyttöjärjestelmästä, palveluista, auki olevista porteista ja haavoittuvaisuuksista.
+Tehtävässä oisin saanut varmaan laajemmat tulokset, jos en olisi käyttänyt virtuaalikonetta, mutta löysin muutamalta nettisivulta hyvät esimerkit minkälaista informaatiota tulisi näkyviin.
+
+### i) Asenna demoni tai pari (esim Apache ja SSH). Vertaile, miten localhost:n laajan porttiskannauksen tulos eroaa.
+
+Aloitin asentamalla Apache HTTP serverin ja SSH palvelun Kali Linuxiin.
+
+        sudo apt update
+        sudo apt install apache2
+        sudo systemctl start apache2
+
+        sudo apt update
+        sudo apt install openssh-server
+        sudo systemctl start ssh
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/826dbbc3-5acb-4d6e-8cf5-cf0f4b4f5e71)
+
+Yllä olevassa näkyy nyt kun laaja porttiskannaus on suoritettu sen jälkeen kun Apache serveri ja palvelin on ladattu.
+Erovaisuutena nyt näen avoimena olevia portteja, mitä kyseiset serverit ja palvelimet käyttävät. Myös erilaiset salausmenetelmät tulivat näkyviin.
+
+### j) Kokeile ja esittele jokin avointen lähteiden tiedusteluun sopiva weppisivu tai työkalu.
+
+Etsin https://inteltechniques.com/tools/index.html sivustolta itseäni kiinnostavan työkalun, ja käytin IP Lookup työkalua.
+
+Syötin Googlen ip-osoitteen 8.8.8.8 ja sen jälkeen sain seuraavat tiedot näkyyvin.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/a023ac2f-9681-4c65-a492-86e8f7485e22)
+
+
+
+## References
+
+https://terokarvinen.com/2024/eettinen-hakkerointi-2024/#h1-hacker-warmup
+https://nmap.org/book/port-scanning-tutorial.html
+https://portswigger.net/web-security/sql-injection/lab-retrieve-hidden-data
+https://www.iplocation.net/ip-lookup
+https://overthewire.org/wargames/bandit/bandit1.html
+https://phoenixnap.com/kb/how-to-install-kali-linux-on-virtualbox
+https://chat.openai.com
+
+
+
+
+
+
+
 
 
 
