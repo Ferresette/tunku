@@ -170,11 +170,17 @@ Syötin Googlen ip-osoitteen 8.8.8.8 ja sen jälkeen sain seuraavat tiedot näky
 ## References
 
 https://terokarvinen.com/2024/eettinen-hakkerointi-2024/#h1-hacker-warmup
+
 https://nmap.org/book/port-scanning-tutorial.html
+
 https://portswigger.net/web-security/sql-injection/lab-retrieve-hidden-data
+
 https://www.iplocation.net/ip-lookup
+
 https://overthewire.org/wargames/bandit/bandit1.html
+
 https://phoenixnap.com/kb/how-to-install-kali-linux-on-virtualbox
+
 https://chat.openai.com
 
 
