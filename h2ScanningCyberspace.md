@@ -84,6 +84,147 @@ Kokeilin googlen pingauksen kaikilla eri tyylillä ja se antoi hieman eri viesti
 ![image](https://github.com/Ferresette/tunku/assets/148973799/5934e440-d8a7-487f-bc7c-efdc4c826225)
 
 
+### d) Etsi Metasploitable porttiskannaamalla (db_nmap -sn). Tarkista selaimella, että löysit oikean IP:n - Metasploitablen weppipalvelimen etusivulla lukee Metasploitable. Katso, ettei skannauspaketteja vuoda Internetiin - kannattaa irrottaa koneet netistä skannatessa. Seuraa liikennettä snifferillä.
+
+Tehtävä tuotti aluksi aika paljon ongelmia. En oikein keksinyt miten db_nmap -sn komennoin saisi toimimaan. Perus nmap komennot toimi Kali linuxin terminaalissa ja myös metaspoitablen ipn kautta nettiosoitteessa tuli oikeat jutut näkyviin. Selvittelin vähän netistä db_nmap -sn komennon virkaa ja selvisi, että sitä pitäisi käyttää Metasploitable frameworkissa. Sielläkään ei aluksi komento toiminut ja antoi kaikennäköistä virhekoodia eteeni.
+
+Yhdestä artikkelista luettuani selvisi, että MSF käyttää PostgreSQL tietokantaa, joten lähdin käynnistämään sitä virutaalikoneellani. Tämän jälkeen aloin alustamaan MSF tietokantaa ja yhdistämään siihen, käytin seuraavia komentoja:
+
+  systemctl start postgresql
+  sudo msfdb init
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/f3d394ff-d820-4071-b77b-9445d9485d1c)
+
+Käsittääkseni nyt minulta löytyy tarvittavat työkalut MSF käyttämiseen, kokeillaan avaamalla msfconsoli komennolla:
+
+  msfconsole
+
+Päästiin sisään konsoliin.
+![image](https://github.com/Ferresette/tunku/assets/148973799/4a412ec2-baa0-4ff6-9b2d-c7dfe611ab68)
+
+Nyt aloin kokeilemaan tehtävänannossa annettuja komentoja, ensiksi:
+
+  db_nmap -sn (Jälkeen päin huomasin, että tässä olin vielä yhteydessä internetiin. En tiedä oliko sillä vaikutusta)
+
+Nyt nmappaus näytti menevän läpi msfconsolessa.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/c60d42c0-3c1c-473f-bca5-13881295c578)
+
+Seuraavaksi vielä varmistin, että kyseinen ip toimi verkkoselaimella ja antoi metaspoitable tekstin.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/143d8b96-194e-476f-bf9c-735b9629f8a9)
+
+Irroitin virtuaalikoneet internetistä. 
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/5d464ea6-814c-4445-b37a-05eb699e3658)
+
+Tämän jälkeen lähdin testaamaan wiresharkilla millaista liikennettä näkyy.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/dcf36aee-a9b5-43d6-9acf-52c8b2af33f7)
+
+Kuvassa näkyy aika paljon tapahtumia, spottasin muutaman rivin, missä oli punaista ja tutkin niitä vähän tarkemmin. Lisätiedoista selviää, että nämä kehykset ovat suspected eli kuvittelisin näiden olevan niitä haitallisia kehyksiä.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/266ce6a5-471b-4ff4-9620-d37058ae6cf3)
+
+### e) Porttiskannaa Metasploitable huolellisesti (db_nmap -A -p0-). Analysoi tulos. Kerro myös ammatillinen mielipiteesi (uusi, vanha, tavallinen, erikoinen), jos jokin herättää ajatuksia. Seuraa liikennettä snifferillä.
+
+Lähdin nyt kokeilemaan toisenlaista nmappaus komentoa msfconsolessa:
+
+  db_nmap -A -p0- 127.0.0.1 (Tässä en ole yhteydessä internetiin, kuten ip-osoitteesta huomaa että se on erilainen)
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/4bffc46d-a649-40a7-8a1c-02b6cf5c994d)
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/a9991a38-1bb6-4de6-946f-0331b0858bcd)
+
+Tulos oli edellisestä poikkeava. Skannaus on paljon laajempi ja huomioni ainakin herätti, että portti 5432 on auki. Skannauksessa havaittiin myös yksi palvelu jonka tietoja ei tunnistettu, voisin kuvitella, että tämä oli se mitä tässä etsittiin.
+
+Tutkin sen jälkeen wiresharkilla verkkoliikennettä, se näytti mielestäni aika samalta kun sitä katsoin aiemmassa tehtävässä. Nyt en löytänyt toki yhtään punaisia kehyksiä.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/8d752ea9-959c-468e-97bb-76c6f9e64855)
+
+### f) Tallenna portiskannauksen tulos tiedostoon käyttäen nmap:n omaa tallennusta (nmap -oA foo).
+
+Tallensin porttiskannauksen tulokset kyseisellä komennolla:
+
+  nmap -oA foo 127.0.0.1
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/98cd4cd9-e4f4-4e56-b6c8-cbcc7b0d9440)
+
+Tämän jälkeen tarkistin, että kyseinen tiedosto löytyy käyttämällä ls komentoa. 
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/25ca3bdf-f61d-4595-a309-61d9351d200a)
+
+Kuten kuva näyttää, sieltä löytyy tallenneut tiedostot. Halusin vielä nähdä niiden sisällön, joten avasin teksieditorilla tiedoston. Käytin vim:iä.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/3ba38358-278b-465d-a523-db15f6b4b6a0)
+
+### g) Tallenna shell-sessio tekstitiedostoon script-työkalulla (script -fa log001.txt)
+
+Lähdin tallentamaan shell-sessiota tekstitiedostoon script-työkalulla. Käytin seuravaa komentoa avatakseen tallennuksen ja tallennuspaikan:
+
+  script -fa log001.txt
+
+Tämän jälkeen tein jotain shellin sisällä ja suoritin exit komennon shell-session päättämiseksi.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/5e0ed230-20ce-4840-b046-7adebe3d66de)
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/e8a001d4-462f-45c8-aefc-06f9d0e29b02)
+
+Scriptin sisältö näytti tältä tekstieditorilla, käytin siis shellin tallennusaikana ls ja ls -a komentoja.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/6dd4ea18-8082-4f8b-95df-d07cd786a56d)
+
+### h) Etsi kaikki maininnat jostain osoitteesta, palvelusta tai vastaavasta kaikista tallennetuista tuloksista ja lokeista (grep -ir tero).
+
+Etsin yllämainitulla komennolla maininnat, tämä komento näköjään etsii tietoa hakemistoista ja tiedostoista. Tällä kertaa se haki teroa.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/52c8c980-9511-4bcd-9f7f-037fb788c7fb)
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/e9ea43ab-7d35-4d54-8981-de39b7f1cc84)
+
+### Anna esimerkit nmap ajonaikaisista toiminnosta. (man nmap: runtime interaction)
+
+Tästä löysin muutamia hyviä esimerkkejä Nmapin runtime interaction komentoihin.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/36012a25-a05b-46db-9846-5c399eb66798)
+
+
+
+### References
+
+https://terokarvinen.com/2024/eettinen-hakkerointi-2024/#h2-scanning-cyberspace
+
+https://www.geeksforgeeks.org/how-to-link-kali-linux-with-metasploitable-2/?ref=ml_lbp
+
+https://medium.com/@nickhandy/kali-linux-metasploit-getting-started-with-pen-testing-89d28944097b
+
+https://gist.github.com/fabionoth/ba46407d9cd03144150225715697c47f
+
+https://nmap.org/book/man-runtime-interaction.html
+
+https://chat.openai.com/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
