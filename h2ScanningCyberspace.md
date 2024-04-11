@@ -90,8 +90,8 @@ Tehtävä tuotti aluksi aika paljon ongelmia. En oikein keksinyt miten db_nmap -
 
 Yhdestä artikkelista luettuani selvisi, että MSF käyttää PostgreSQL tietokantaa, joten lähdin käynnistämään sitä virutaalikoneellani. Tämän jälkeen aloin alustamaan MSF tietokantaa ja yhdistämään siihen, käytin seuraavia komentoja:
 
-  systemctl start postgresql
-  sudo msfdb init
+    systemctl start postgresql
+    sudo msfdb init
 
 ![image](https://github.com/Ferresette/tunku/assets/148973799/f3d394ff-d820-4071-b77b-9445d9485d1c)
 
