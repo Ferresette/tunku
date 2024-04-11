@@ -36,9 +36,9 @@ Tiedosto oli zippi tiedostona, joten aloitin purkamalla kyseisen tiedoston. Täm
 
 Lisättiin perus asetukset kuten nimi, tyyppi, versio ja säädettiin muistit kuntoon. Seuraavaksi hyödynnettiin jo valmiina olevaa Kali Linuxia existing virtual hard disk filenä.
 
-![image](https://github.com/Ferresette/tunku/assets/148973799/53e328fe-b477-4eee-b3a9-d143ea4d3f34)
-
 Etsittiin ladattu Metaspoitable 2 tiedosto jo lisättiin se Kali linuxiin.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/53e328fe-b477-4eee-b3a9-d143ea4d3f34)
 
 ![image](https://github.com/Ferresette/tunku/assets/148973799/dc297a0f-2c6c-4c80-8ad4-d2ebc8c589a2)
 
@@ -47,6 +47,45 @@ Etsittiin ladattu Metaspoitable 2 tiedosto jo lisättiin se Kali linuxiin.
 ![image](https://github.com/Ferresette/tunku/assets/148973799/48b9aaa5-51d9-4be7-bd66-4c279513cb3f)
 
 Hyödynsin ohjesivuston kuvia kuvastamaan asennusvaihetta, koska olin koulussa kerennyt asentamaan ohjelman enkä tajunnut ottaa talteen kyseisiä vaiheita.
+
+Metasploitablen asennus onnistunut.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/524ce936-0f50-4204-828b-4e31a1f94839)
+
+### c) Tee koneille virtuaaliverkko, jossa
+
+  - Kalin ja Metasploitablen välillä on host-only network, niin että porttiskannatessa ym. koneet on eristetty intenetistä, mutta ne saavat yhteyden toisiinsa
+
+  - Osoita eri komennoilla, että Internet-yhteys katkeaa: 'ping 1.1.1.1', 'ping www.google.com', 'curl www.google.com'
+
+Aloin etsimään tietoa miten koneille luodaan virtuaaliverkko mikä hyödyntää Host-only verkkoa. Pienen tutkiskelun jälkeen selvisi, että tämä voidaan toteuttaa muuttamalla virtuaalikoneiden network settingsejä.
+
+Asetuksista löytyi vaihtoehto Host-only adapter ja sen alapuolelle tuli VirtualBox Host-only Ethernet Adapter. Vaihdoin molempien virtuaalikoneiden asetukset tähän vaihtoehtoon.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/24ffd071-d33c-45e6-a8fd-d233a09a7a3b)
+
+Lähdin tarkastamaan asian, että koneet käyttävät samaa verkkoa käyttämällä komentoa:
+
+    ip addr
+
+Sieltä löysin Metasploitablen ip osoitteen jota lähdin pingaaman. Pingaus onnistui Kalin kautta Metasploitableen, joten yhteys on kunnossa.
+Varmistin myös, että pingaus epäonnistuu annettuun googlen esimerkki osoitteeseen ja tämä meni myös niin kuin piti.
+
+ip addr käyttö.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/776dd342-9c13-4fd1-a7f8-05aacf9ac1f5)
+
+Pingaus Metasploitablen osoitteeseen.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/3e621bcc-a1ee-41a4-8d17-1d8181483e7b)
+
+Kokeilin googlen pingauksen kaikilla eri tyylillä ja se antoi hieman eri viestin syötekenttään, mutta voidaan ainakin todeta ettei onnistu.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/5934e440-d8a7-487f-bc7c-efdc4c826225)
+
+
+
+
 
 
 
