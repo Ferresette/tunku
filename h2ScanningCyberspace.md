@@ -97,14 +97,15 @@ Yhdestä artikkelista luettuani selvisi, että MSF käyttää PostgreSQL tietoka
 
 Käsittääkseni nyt minulta löytyy tarvittavat työkalut MSF käyttämiseen, kokeillaan avaamalla msfconsoli komennolla:
 
-  msfconsole
+    msfconsole
 
 Päästiin sisään konsoliin.
+
 ![image](https://github.com/Ferresette/tunku/assets/148973799/4a412ec2-baa0-4ff6-9b2d-c7dfe611ab68)
 
 Nyt aloin kokeilemaan tehtävänannossa annettuja komentoja, ensiksi:
 
-  db_nmap -sn (Jälkeen päin huomasin, että tässä olin vielä yhteydessä internetiin. En tiedä oliko sillä vaikutusta)
+    db_nmap -sn (Jälkeen päin huomasin, että tässä olin vielä yhteydessä internetiin. En tiedä oliko sillä vaikutusta)
 
 Nyt nmappaus näytti menevän läpi msfconsolessa.
 
@@ -203,6 +204,8 @@ https://gist.github.com/fabionoth/ba46407d9cd03144150225715697c47f
 https://nmap.org/book/man-runtime-interaction.html
 
 https://chat.openai.com/
+
+https://sourceforge.net/projects/metasploitable/files/Metasploitable2/
 
 
 
