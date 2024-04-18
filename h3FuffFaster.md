@@ -238,6 +238,70 @@ Latasin vielä kaikki tarvittavat sanalistat, jotta pääsin suorittamaan tehtä
     $ wget http://ffuf.me/wordlist/subdomains.txt
     $ cd -
 
+Katkaisin internet yhteyden ja aloin fuzzamaan.
+
+    $ ffuf -w $HOME/wordlists/common.txt -u http://ffuf.me/cd/basic/FUZZ
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/d2095c70-0607-4536-98a6-729f8ba2da9c)
+
+
+Harjoittelusivulle päästy onnistuneesti, sivu päivittyi kyllä todella hitaasti.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/86a1e542-0bf3-4f30-9187-1cf526cfe3b4)
+
+
+
+**Basic Content Discovery**
+
+Perinteisin fuzzaus menetelmä. Tämä löytää class sekä development.log tiedostot.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/f34fcfa3-2f88-4e92-a33f-5110d724f896)
+
+
+**Content Discovery With Recursion**
+
+Samankaltainen kun edellinen fuzzaus. Käyttää rekursiokytkintä. Paljastaa admin, admin/users ja admin/users/96 tiedostot.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/3f580c5c-04c3-4e51-9d8d-ddbaaa2dcb8b)
+
+
+**Content Discovery With File Extensions**
+
+Löytää logs/users.log tiedostot.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/d6ebaa39-01d6-496b-8ef4-4a4498de87cf)
+
+
+**No 404 Status**
+
+Löytää secretin ja filtteröi sen 669.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/676355a0-3634-4b84-8a35-278c4e91e987)
+
+**Param Mining**
+
+Etsii URL parametrejä.
+Löytää debugin.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/066f2116-de6b-44b9-bf95-ea7ca43c4e43)
+
+
+**Rate Limited**
+
+Rate limitedin tarkoituksena on rajoittaa haun pyyntöjen lähetystä, eli kuinka nopeasti se lähettää pyyntöjä. Jotkut verkkopalvelut voivat rajottaa pyyntöjen määrää.
+
+
+**Subdomains - Virtual Host Enumeration**
+
+Tarkoituksena tunnistaa subdomaineja ja löytää aktiiviset virtuaaliset isännät.
+
+redhat tuli tulokseksi tässä.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/671faf34-01e5-4152-b162-8905328d1b0d)
+
+
+
+
 
 
 
