@@ -205,7 +205,22 @@
 
   ![image](https://github.com/Ferresette/tunku/assets/148973799/14160961-9b95-40d9-bc8d-5932d2fd2cdd)
 
+  ## d) Fuffme. Asenna Ffufme harjoitusmaali paikallisesti omalle koneellesi. Ratkaise tehtävät (kaikki paitsi ei "Content Discovery - Pipes")
 
+  Aloitin lataamalla tehtävään tarvittavia ympäristöjä.
+
+      $ sudo apt-get update
+      $ sudo apt-get install docker.io git ffuf
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/16f1d43a-6189-43c7-9763-c7c08982cd3d)
+
+Tämän jälkeen aloitin rakentamaan harjoituskohdetta Dockeriin.
+
+    $ git clone https://github.com/adamtlangley/ffufme
+    $ cd ffufme/
+    $ sudo docker build -t ffufme .
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/7bc1d58d-1d06-46b6-b754-93e2a9e8f2ee)
 
 
 
