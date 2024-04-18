@@ -162,8 +162,9 @@
 
   Aloitin johnin konfiguroinnin.
 
-    $ cd john/src/	
-    $ ./configure
+      $ cd john/src/
+  
+      $ ./configure
 
   ![image](https://github.com/Ferresette/tunku/assets/148973799/c34bec40-b673-48eb-b44b-080a9229f6e4)
 
