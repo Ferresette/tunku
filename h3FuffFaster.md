@@ -113,6 +113,45 @@
 
   ![image](https://github.com/Ferresette/tunku/assets/148973799/d25e2292-fe19-4cc1-8214-d7af0a8e56cc)
 
+  ### Your turn - Challenge
+
+  Aloitin tekemään haastetta. Suoritin samat toimenpiteet mitä harjoituksissa, mutta vaihdoin vain dirfuzt-0 dirfuzt-1:seksi.
+
+  ![image](https://github.com/Ferresette/tunku/assets/148973799/b402fba3-4d05-485c-9e87-204af8ba1232)
+
+  Kuvassa näkyy suoritetut komennot, sekä nettiselaimen näkymä.
+
+  Avasin uuden shellin ja asensin kirjaston uudelleen.
+
+  ![image](https://github.com/Ferresette/tunku/assets/148973799/cc6feb71-c7b8-4164-b8ca-6a2d703a15aa)
+
+  Tämän jälkeen aloitin taas fuzzaamisen.
+
+  ![image](https://github.com/Ferresette/tunku/assets/148973799/b5928333-65a7-4567-a721-e4910e4609de)
+
+  ![image](https://github.com/Ferresette/tunku/assets/148973799/786b4d67-aa2f-4fad-9540-ba3fea43592b)
+
+  Tulokset olivat aika samanlaisia kuin aiemmassa harjoituksessa, kiinnitin kuitenki huomiota 154 bytesiin, joten päätin filtteröidä sillä.
+
+  ![image](https://github.com/Ferresette/tunku/assets/148973799/d4c35e10-071d-4d06-a490-ea0744afdbce)
+
+  ![image](https://github.com/Ferresette/tunku/assets/148973799/918a8517-e678-48e7-8b64-a474b087caf8)
+
+  Sieltä löytyikin sitten tarvittavia aineksia tehtävän ratkaisemiseksi, kokeillaan wp-adminia URLiin selaimessa.
+
+  ![image](https://github.com/Ferresette/tunku/assets/148973799/b713cf00-102b-4725-8606-efbe3dcb821f)
+
+  Kappas keppanaa.
+
+
+
+
+
+
+
+  
+
+
 
 
 
