@@ -222,6 +222,25 @@ Tämän jälkeen aloitin rakentamaan harjoituskohdetta Dockeriin.
 
 ![image](https://github.com/Ferresette/tunku/assets/148973799/7bc1d58d-1d06-46b6-b754-93e2a9e8f2ee)
 
+Seuraavaksi lähin käynnistämään dockeria, mikä käytti ffufme kuvaa. Ja ohjaa sen koneen portin 80 isäntäkoneen porttiin 80. Ja testasin yhteyden curlilla.
+
+    $ sudo docker run -d -p 80:80 ffufme
+    $ curl localhost
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/64fdef31-9b0f-4911-beea-2feaf112bf94
+
+Latasin vielä kaikki tarvittavat sanalistat, jotta pääsin suorittamaan tehtäviä.
+
+    $ mkdir $HOME/wordlists
+    $ cd $HOME/wordlists
+    $ wget http://ffuf.me/wordlist/common.txt
+    $ wget http://ffuf.me/wordlist/parameters.txt 
+    $ wget http://ffuf.me/wordlist/subdomains.txt
+    $ cd -
+
+
+
+
 
 
 
