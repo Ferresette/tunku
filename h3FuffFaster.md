@@ -308,6 +308,8 @@ redhat tuli tulokseksi tässä.
 
 Jos oikein ymmärsin, niin tässä pelkät komennot ja selitykset riittivät. Tunnilla jo hieman käytiinkin msfvenomin käyttöä läpi. 
 
+# KESKEN
+
 
 
 ### f) Asenna Windows virtuaalikoneeseen. Voi olla esimerkiksi Metasploitable 3 tai Microsoftin sivuilta saatava ilmainen kokeiluversio.
@@ -334,6 +336,8 @@ Aloitin lataamalla rdesktopin Kali linux koneelleni:
 ![image](https://github.com/Ferresette/tunku/assets/148973799/6ca615c3-059d-401b-8e91-ee95f4db9f46)
 
 Näyttikin jo löytyvän Kali Linuxista, mutta tulipahan kokeiltua komentoja.
+
+# KESKEN
 
 
 
