@@ -319,6 +319,24 @@ Latauksen jälkeen lähdin tekemään uutta virtuaalikonetta Windows iso imageen
 
 ![image](https://github.com/Ferresette/tunku/assets/148973799/46a77054-6edf-424c-956c-8b9fcb4535ec)
 
+![image](https://github.com/Ferresette/tunku/assets/148973799/33a0ebbd-06cd-4790-b076-340f724d033b)
+
+Windows asennettuna onnistuneesti.
+
+### g) Ota Windowsiin graafinen etähallintayhteys Linuxista. Käytä RDP:tä eli Remote Desktop Protocol.
+
+RDP (Remote desktop protocol) on aika monta vaihtoehtoa tehdä etähallintaa koneiden välillä, mutta päädyin käyttämään rdesktopia. 
+Aloitin lataamalla rdesktopin Kali linux koneelleni:
+
+    sudo apt-get update
+    sudo apt-get install rdesktop
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/6ca615c3-059d-401b-8e91-ee95f4db9f46)
+
+Näyttikin jo löytyvän Kali Linuxista, mutta tulipahan kokeiltua komentoja.
+
+
+
 
 
 
