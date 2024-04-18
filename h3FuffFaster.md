@@ -143,6 +143,79 @@
 
   Kappas keppanaa.
 
+  ## c) Asenna John the Ripper ja testaa sen toiminta murtamalla jonkin esimerkkitiedoston salasana.
+
+  Lähdin tutkimaan https://terokarvinen.com/2023/crack-file-password-with-john/ sivustolta John the Ripperistä.
+
+  Aloitin asentamalla tarvittavat työkalut johnin käyttöön.
+
+      $ sudo apt-get update
+      $ sudo apt-get -y install micro bash-completion git build-essential libssl-dev zlib1g zlib1g-dev zlib-gst libbz2-1.0 libbz2-dev atool zip wget
+
+  ![image](https://github.com/Ferresette/tunku/assets/148973799/935b482e-5c0b-4923-bca0-a9a9ffef13b6)
+
+  Seuraavaksi itse johnin asennus.
+
+      $ git clone --depth=1 https://github.com/openwall/john.git
+
+  ![image](https://github.com/Ferresette/tunku/assets/148973799/24fff7ca-705c-41e9-9e96-3fea9cd3a62b)
+
+  Aloitin johnin konfiguroinnin.
+
+    $ cd john/src/	
+    $ ./configure
+
+  ![image](https://github.com/Ferresette/tunku/assets/148973799/c34bec40-b673-48eb-b44b-080a9229f6e4)
+
+  Asennusskriptin asensin seuraavalla komennolla:
+
+      ./configure && make -s clean && make -sj4
+
+  ![image](https://github.com/Ferresette/tunku/assets/148973799/b56a06ae-c0f4-48a7-a80d-8984ed8ff034)
+
+
+  Käytin komentoa ls -l, jotta näin vähän mitä tiedosto sisältää.
+
+  ![image](https://github.com/Ferresette/tunku/assets/148973799/e0c8c398-c6f2-4f1d-8306-e515ed7cd4ab)
+
+  Käytin teron sivuilla löytyvää zippi tiedostoa testatakseni ympäristöä.
+
+      $ wget https://TeroKarvinen.com/2023/crack-file-password-with-john/tero.zip
+
+  ![image](https://github.com/Ferresette/tunku/assets/148973799/2aa89e84-cb80-4293-a9fa-08e4cc1ff2ae)
+
+  Koitin avata teron zippi tiedostoa, kuten sivuillakin sanottiin että se olisi turhaa. Ei päästy vielä eteenpäin siis.
+
+  ![image](https://github.com/Ferresette/tunku/assets/148973799/394c797a-e2e2-456d-b567-e999b7ba8ea7)
+
+  Jotta saisin zippi tiedostosta jotain irti, minun täytyi purkaa se uuteen tiedostoon nimeltä tero.zip.hash.
+
+      zip2john tero.zip >tero.zip.hash
+
+  Tämän jälkeen suoritin hyökkäyksen Johnilla kyseiseen tiedostoon.
+
+      john tero.zip.hash
+
+  ![image](https://github.com/Ferresette/tunku/assets/148973799/7a864445-fe3a-41ce-8796-ea0f9c93f2c0)
+
+  Sain nyt talteen salasanan "Butterfly", lähdetään yrittämään purkaa teron zippi tiedostoa tällä salasanalla. Syötettiin salasana, se toimi ja nyt saatiin tiedosto sijainti.
+
+      unzip tero.zip
+      cat secretFiles/SECRET.md
+
+  ![image](https://github.com/Ferresette/tunku/assets/148973799/14160961-9b95-40d9-bc8d-5932d2fd2cdd)
+
+
+
+
+
+
+  
+
+
+
+
+
 
 
 
