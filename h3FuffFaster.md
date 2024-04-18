@@ -84,6 +84,41 @@
       $ tar -xf ffuf_2.0.0_linux_amd64.tar.gz
       $ ./ffuf
 
+  ![image](https://github.com/Ferresette/tunku/assets/148973799/60049dac-217d-4cd7-9c54-df0db01a1c37)
+
+  ![image](https://github.com/Ferresette/tunku/assets/148973799/142ee964-5a0a-409c-add8-cf99c4a5331c)
+
+  Seuraavaksi tarvitaan kirjastoa, onneksi teron sivuilta löytyi valmis kirjasto samalta tekijältä mitä hyödynnettiin aikaisemmassa tehtävässä.
+
+      $ wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/common.txt
+
+  ![image](https://github.com/Ferresette/tunku/assets/148973799/34a35f34-dc55-44fe-81a9-f66960649299)
+
+  Aloin uudella shellillä kokeilemaan fuzzaamista teron esimerkkisivustoon:
+
+      $ ./ffuf -w common.txt -u http://127.0.0.2:8000/FUZZ
+
+  ![image](https://github.com/Ferresette/tunku/assets/148973799/de53a20e-87cf-49df-a56d-a071afe9648b)
+
+  ![image](https://github.com/Ferresette/tunku/assets/148973799/c13b91a5-2f02-41dc-8e37-ffe8306eab0c)
+
+
+  Fuzzaaminen onnistui ja löytyi paljon dataa. Sivu mitä fuzzattiin sekä wordlist ja 4727 kohdetta.
+
+  Tämän jälkeen filtteröin 132 bytesiin, jotta tulosten määrä pienentyisi.
+
+  ![image](https://github.com/Ferresette/tunku/assets/148973799/06b5aa3e-3773-41aa-96db-455f271ce74c)
+
+  Kyseinen filtteröinti pienensi huomattavasti tuloksia. Sinne jäi nyt kaksi kohdetta, Admin sekä google.com. Lisäsin teron esimerkkisivuston URLiin adminin perään ja tämä tehtävä onnistui.
+
+  ![image](https://github.com/Ferresette/tunku/assets/148973799/d25e2292-fe19-4cc1-8214-d7af0a8e56cc)
+
+
+
+
+
+
+
 
 
 
