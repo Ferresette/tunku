@@ -299,6 +299,27 @@ redhat tuli tulokseksi tässä.
 
 ![image](https://github.com/Ferresette/tunku/assets/148973799/671faf34-01e5-4152-b162-8905328d1b0d)
 
+### e) Tee msfvenom-työkalulla haittaohjelma, joka soittaa kotiin (reverse shell). Ota yhteys vastaan metasploitin multi/handler -työkalulla.
+
+ - Haittaohjelma ei saa olla automaattisesti leviävä. Msfvenom tekee tunnilla opetelluilla asetuksilla ohjelman, joka avaa reverse shellin, kun sen ajaa, mutta joka ei leviä eikä tee muutenkaan mitään 
+   itsestään.
+ - Raporttiin riittävät pelkät komennot haitakkeen tekemiseen, itse binääriä ei ole pakko laittaa verkkoon. Mikäli laitat binäärin verkkoon, pakkaa se salakirjoitettuun zip-pakettiin ja laita salasanaksi "infected". Latauslinkin yhteydessä on oltava selkeä varoitus siitä, että binääriä ei tule ajaa oikeilla koneilla. Salasanan voit halutessasi kertoa varoitusten yhteydessä.
+
+Jos oikein ymmärsin, niin tässä pelkät komennot ja selitykset riittivät. Tunnilla jo hieman käytiinkin msfvenomin käyttöä läpi. 
+
+
+
+### f) Asenna Windows virtuaalikoneeseen. Voi olla esimerkiksi Metasploitable 3 tai Microsoftin sivuilta saatava ilmainen kokeiluversio.
+
+Aloitin asentamaan windowsia virtuaalikoneeseen. Hain microsoftin sivuilta Windows 10 ja valitsin sieltä latauskohdassa iso tiedoston, jotta se ei asenna sitä omalle koneelleni.
+Latauksen jälkeen lähdin tekemään uutta virtuaalikonetta Windows iso imageen. Asetettiin muistit ja haluamani asetukset. Käynnistettiin kone.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/df7ac4e7-e651-4875-b4d0-3282a7eeefcb)
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/46a77054-6edf-424c-956c-8b9fcb4535ec)
+
+
+
 
 
 
