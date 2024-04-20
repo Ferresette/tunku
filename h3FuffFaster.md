@@ -335,9 +335,29 @@ Aloitin lataamalla rdesktopin Kali linux koneelleni:
 
 ![image](https://github.com/Ferresette/tunku/assets/148973799/6ca615c3-059d-401b-8e91-ee95f4db9f46)
 
-Näyttikin jo löytyvän Kali Linuxista, mutta tulipahan kokeiltua komentoja.
+Näyttikin jo löytyvän Kali Linuxista, mutta tulipahan kokeiltua komentoja. 
+
+Tämän kanssa alkoi ilmeentyä ongelmia, selvisi että minulla on Windows 10 Home, joka ei tue ollenkaa RDP protokollaa. Olisi varmaan ollut mahdollisuus jollain third party clientillä saada etäyhteys toimimaan, mutta uskon ettei se ollut tässä tarkoituksena. En ole vielä ainakaan löytänyt mistä saisin
+Windows 10 Pro:n virtuaalikoneelle ilmaiseksi/luotettavasti.
 
 # KESKEN
+
+
+## Lähteet
+
+https://terokarvinen.com/2024/eettinen-hakkerointi-2024/#h3-fuff-faster
+
+https://terokarvinen.com/2023/fuzz-urls-find-hidden-directories/
+
+https://terokarvinen.com/2023/crack-file-password-with-john/
+
+https://terokarvinen.com/2022/cracking-passwords-with-hashcat/
+
+https://terokarvinen.com/2023/fuzz-urls-find-hidden-directories/
+
+https://medium.com/@ujjawal.soni2002/cracking-a-password-protected-zip-file-using-john-the-ripper-f39e657cbfa8
+
+
 
 
 
