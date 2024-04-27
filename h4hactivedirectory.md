@@ -10,3 +10,8 @@ Valitsin Nikitan kalvoista seuraavan artikkelin: https://wadcoms.github.io/
 
   Olin jo kirjoittamassa, että olisi hyvä jos saisi vähän spesifimpiä tietoa, mitä kyseiset koodin pätkät tekee. Mutta klikkaamalla niitä saa selville niiden käyttötarkoituksen ympäristössä. Tämä on mielestäni aika hyödyllinen ominaisuus, varsinkin jos ei ole hirveästi kokemusta.
   
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/372e21ec-288a-4875-a1ad-c7635b8485f7)
+
+
+Jäin jumiin kolmanteen kohtaan, käytin 15h tehtävien tekoon ja siinä vaiheessa loppui viikosta päivät ja omat hermot. Löysin kyllä halutun tiedoston 3 tehtävässä, mutta en onnistunut siirtämään sitä toiselle koneelle tai saamaan auki kyseistä tiedostoa. Mielenkiintosta settiä, mutta oli aika haastava viikkotehtävä.
