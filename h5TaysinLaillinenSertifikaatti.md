@@ -121,7 +121,7 @@ Kuten keskustelusta huomaa, Carlos on livechatissa sanonut unohtaneensa salasana
 
 ![image](https://github.com/Ferresette/tunku/assets/148973799/14301cbe-3d7a-45f4-9a99-b02564b3ef0b)
 
-Päästiin sisään carloksen tilille. Sanoisin, että ensimmäiseksi ehkä suurin virhe on siinä, että salasanoja ei pitäisi jakaa chat keskusteluissa. Normaalimpi käytäntö on lähettää ne sähköpostiin. Mutta kun kirjauduttiin carloksen tunnukselle, siinä vaaditaan heti päivittämään sähköpostiosoite.
+Päästiin sisään carloksen tilille. Sanoisin, että ensimmäiseksi ehkä suurin virhe on siinä, että salasanoja ei pitäisi jakaa chat keskusteluissa. Normaalimpi käytäntö on lähettää ne sähköpostiin. Mutta kun kirjauduttiin carloksen tunnukselle, siinä vaaditaan heti päivittämään sähköpostiosoite mikä voisi jokseenkin selittää tätä vuotoa.
 
 - Path traversal
 ### d) File path traversal, simple case
