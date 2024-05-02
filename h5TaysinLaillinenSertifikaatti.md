@@ -86,7 +86,22 @@ Myös se, että kuvienkaappaminen näyttäisi onnistuvan.
 
 ![image](https://github.com/Ferresette/tunku/assets/148973799/600d30ce-12ed-4353-b743-8dd0a12a4a8b)
 
-Lähdin kokeilemaan, miten patterns toimii FoxyProxyssa seuraavaksi. Laitan patterneihin portswiggerin sivuston ja kokeilen mennä saman aikaisesti muutamalle muulle sivulle. 
+Lähdin kokeilemaan, miten patterns toimii FoxyProxyssa seuraavaksi. Laitan patterneihin portswiggerin sivuston ja localhostin. Kokeilen mennä saman aikaisesti muutamalle muulle sivulle.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/77a665b0-93d7-43d7-ab18-cebe2a3bc8a7)
+
+
+Tässä huomaa kun menen iltalehden sivulle, zappiin ei ilmesty mitään kun pattern on päällä.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/97e58ed0-fd7c-4431-a944-0b9d233ab5e7)
+
+Seuraavaksi koitan mennä portswiggerin sivuille, mikä löytyy kyseisestä patternista.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/347e1bae-bcc3-485a-859c-a4d500f04192)
+
+Kuten näkyy, portswiggerin sivustosta tulee tietoa ZAP:piin joten patternit tuntuisi toimivan oikein.
+
+
 
 
 
