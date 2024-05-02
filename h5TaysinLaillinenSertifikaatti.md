@@ -101,6 +101,30 @@ Seuraavaksi koitan mennä portswiggerin sivuille, mikä löytyy kyseisestä patt
 
 Kuten näkyy, portswiggerin sivustosta tulee tietoa ZAP:piin joten patternit tuntuisi toimivan oikein.
 
+### PortSwigger Labs. Ratkaise tehtävät. Selitä ratkaisusi: mitä palvelimella tapahtuu, mitä eri osat tekevät, miten hyökkäys löytyi, mistä vika johtuu. Kannattaa käyttää ZAPia, vaikka malliratkaisut käyttävät harjoitusten tekijän maksullista ohjelmaa. Malliratkaisun kopioiminen ZAP:n tai selaimeen ei ole vastaus tehtävään, vaan ratkaisu ja haavoittuvuuden etsiminen on selitettävä ja perusteltava.
+
+  - Insecure Direct Object Reference (IDOR)
+
+**c) Insecure direct object references**
+
+Kun lähdin tekemään tehtävää, olin aivan kuistilla. Katsoin hieman suuntaa ohjeista mihin päin pitää lähteä. Tarkoituksena oli siis päästä kirjautumaan Carloksen tilille ja löytää siihen krendentiaalit sivustolta. Ohjeessa käskettiin käyttämään Live Chatia. Aloitin live chatin käymällä satunnaista keskustelua jotta saisin transcriptiä minkä tallentaa. Minulla oli ZAP päällä kokoajan, ja sinne ilmestyi paljon erilaisia pyyntöjä. Jokaisesta keskustelusta, mitä oli livechatissa oli historia Websocketissa. Ihmettelin, että miksi en löydä transciptiä sieltä. Historysta kun etsin tarkemmin siellä oli POST pyyntönä ladattu transcript. Tulostin aika monta transcriptiä, joten minulla se viimeisin näkyi 5.txt, ensimmäinen oli 2.txt. 
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/117c8bbd-cd1b-4bcc-9fb7-6647701700dc)
+
+Nyt kun tätä miettii tarkemmin, jos jokaisesta keskustelusta jää historia ja mikä voidaan tallentaa transcriptiksi. Niin todennäköisesti minun ei ole ainut mikä on joskus tallennettu. Ladatut transcriptit on tallennettu tietyllä tavalla ja muuttamalla numeroa HTTP messageen on mahdollisuus nähdä myös muita scriptejä(jos siis ne tallennetaan tähän tyyliin). Eli tässä vaiheessa lähetin HTTP requestin, missä muokkasin transcripti tiedoston numeroa 5 --> 1. Vastauksena sain transcriptin, mikä oli tallennettanu 1.txt ja täällä näkyi "Carlosin" käymä keskutelu live chatissa.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/9d7ce30f-60da-466b-987a-206851e3582c)
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/8d5cd2da-de3b-430f-a22b-cd3a9adc6501)
+
+Kuten keskustelusta huomaa, Carlos on livechatissa sanonut unohtaneensa salasanan. Joten poimittiin se ylös ja lähdetään kokeilemaan.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/14301cbe-3d7a-45f4-9a99-b02564b3ef0b)
+
+Päästiin sisään carloksen tilille. Sanoisin, että ensimmäiseksi ehkä suurin virhe on siinä, että salasanoja ei pitäisi jakaa chat keskusteluissa. Normaalimpi käytäntö on lähettää ne sähköpostiin. Mutta kun kirjauduttiin carloksen tunnukselle, siinä vaaditaan heti päivittämään sähköpostiosoite.
+
+
+
 
 
 
