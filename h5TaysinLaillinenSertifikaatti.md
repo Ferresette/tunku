@@ -105,7 +105,7 @@ Kuten näkyy, portswiggerin sivustosta tulee tietoa ZAP:piin joten patternit tun
 
   - Insecure Direct Object Reference (IDOR)
 
-**c) Insecure direct object references**
+### c) Insecure direct object references
 
 Kun lähdin tekemään tehtävää, olin aivan kuistilla. Katsoin hieman suuntaa ohjeista mihin päin pitää lähteä. Tarkoituksena oli siis päästä kirjautumaan Carloksen tilille ja löytää siihen krendentiaalit sivustolta. Ohjeessa käskettiin käyttämään Live Chatia. Aloitin live chatin käymällä satunnaista keskustelua jotta saisin transcriptiä minkä tallentaa. Minulla oli ZAP päällä kokoajan, ja sinne ilmestyi paljon erilaisia pyyntöjä. Jokaisesta keskustelusta, mitä oli livechatissa oli historia Websocketissa. Ihmettelin, että miksi en löydä transciptiä sieltä. Historysta kun etsin tarkemmin siellä oli POST pyyntönä ladattu transcript. Tulostin aika monta transcriptiä, joten minulla se viimeisin näkyi 5.txt, ensimmäinen oli 2.txt. 
 
@@ -122,6 +122,13 @@ Kuten keskustelusta huomaa, Carlos on livechatissa sanonut unohtaneensa salasana
 ![image](https://github.com/Ferresette/tunku/assets/148973799/14301cbe-3d7a-45f4-9a99-b02564b3ef0b)
 
 Päästiin sisään carloksen tilille. Sanoisin, että ensimmäiseksi ehkä suurin virhe on siinä, että salasanoja ei pitäisi jakaa chat keskusteluissa. Normaalimpi käytäntö on lähettää ne sähköpostiin. Mutta kun kirjauduttiin carloksen tunnukselle, siinä vaaditaan heti päivittämään sähköpostiosoite.
+
+- Path traversal
+### d) File path traversal, simple case
+
+
+### e) File path traversal, traversal sequences blocked with absolute path bypass
+### f) File path traversal, traversal sequences stripped non-recursively
 
 
 
