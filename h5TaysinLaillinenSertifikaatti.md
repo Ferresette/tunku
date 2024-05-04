@@ -126,6 +126,22 @@ Päästiin sisään carloksen tilille. Sanoisin, että ensimmäiseksi ehkä suur
 - Path traversal
 ### d) File path traversal, simple case
 
+Tarkoituksena tehtävässä oli löytää haavoittuvaisuuksia kuvista, ja muokkaamalla niiden parametrejä. Lähdin kokeilemaan painamalla kuvia ja ZAP:piin alkoikin ilmestyä pyyntöjä. Löysin kuviin liittyviä pyyntöjä hyvin nopeasti niitä klikattuani ja myös kuvien polun, mikä näytti seuraavalta:
+
+    GET https://0a8800750330735d802b1721001300a9.web-security-academy.net/image?filename=22.jpg
+
+Pienen pähkäilyn ja portswiggerin apujen jälkeen, ajattelin muokata kyseistä polkua tehtävässä annetulla esimerkillä requester tabissa. Aluksi kopioin kuvatiedoston tiedot requester tabiin:
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/89ef488a-31ff-46ee-8bca-98e02b0ce148)
+
+Ja sen jälkeen vaihdoin "22.jpg" tilalle ../../../etc/passwd. Eli tarkoitus manipuloida kyseistä tiedostopolukua tässä tehtävässä, jolloin päästään juurihakemistosta arkaluontoisiin tietoihin käsiksi.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/2410b0a6-9e86-40dc-a072-dc38ec15b2dd)
+
+
+
+
+
 
 ### e) File path traversal, traversal sequences blocked with absolute path bypass
 ### f) File path traversal, traversal sequences stripped non-recursively
