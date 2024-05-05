@@ -210,6 +210,31 @@ Täytettiin kommenttikenttään esimerkki koodinpätkä, lisättiin nimi ja säh
 ![image](https://github.com/Ferresette/tunku/assets/148973799/e09b7d02-f978-469f-955c-4d6e1fcec281)
 
 
+### k) Asenna Webgoat 2023.4. (Uusi versio, jossa on eri tehtäviä kuin vanhemmissa. Jos olet jo asentanut sen, ei tarvitse raportoida asennusta uudelleen; raportoi silloin vain pelkkä testi, jolla toteat sen toimivaksi.)
+
+Minulla oli vanhempi webgoat niin latasin teron sivujen ohjeiden mukaan uusimman version, missä uudet tehtävät. https://terokarvinen.com/2023/webgoat-2023-4-ethical-web-hacking/
+
+    wget https://github.com/WebGoat/WebGoat/releases/download/v2023.4/webgoat-2023.4.jar
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/a305e076-0c89-45be-a18f-2b22190a6f7f)
+
+
+### l) Asenna pencode ja muunna sillä jokin merkkijono (encode a string)
+
+Ensi töikseni lähdin asentamaan pencodea. https://github.com/ffuf/pencode sivustolta ohjeistus tähän.
+
+    sudo apt install golang-go
+    go install github.com/ffuf/pencode/cmd/pencode@latest
+
+Asennuksen jälkeen siirryttiin muuntamaan merkkijonoa. Kokeilin vähän eri variaatioita.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/e299fa9d-1960-4379-ab0d-b1116c6d0843)
+
+
+
+
+
+
 
 
 
