@@ -138,13 +138,58 @@ Ja sen jälkeen vaihdoin "22.jpg" tilalle ../../../etc/passwd. Eli tarkoitus man
 
 ![image](https://github.com/Ferresette/tunku/assets/148973799/2410b0a6-9e86-40dc-a072-dc38ec15b2dd)
 
-
-
-
-
-
 ### e) File path traversal, traversal sequences blocked with absolute path bypass
+
+Hyvin samantyylinen tehtävä kun edellinen, käytettiin vain absoluuttista polkua saadakseen arkaluontoiset tiedot käsiimme. Eli 3.jpg korvattiin /etc/passwd.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/0761240c-e696-4948-bf6a-02b27ef8c265)
+
+Ja sieltä päästiin käsiksi tietoihin.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/5f5a636a-186e-4947-bc9f-8f34d6c1a6b4)
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/7b6d4f4c-8d82-4662-bd65-b80f9dab1db1)
+
+
 ### f) File path traversal, traversal sequences stripped non-recursively
+
+Taas mennään samalla linjalla, manipuloidaan tiedostopolkua vain hieman eritavalla. Käsittääkseni, kun lisätään tälläinen tiedostopolku niin merkkijonot poistetaan vain kerran ja ei jatka merkkijonojen poistoja, milloin päästiin taas käsiksi arkaluontoiseen tietoon.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/0a0baa4a-11de-4886-8968-be4dcbeb26dc)
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/6bd318a1-b966-40df-b84e-e74b88db833d)
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/0b63b390-e106-4283-bcfa-98050f6208d4)
+
+
+- Server Side Request Forgery (SSRF)
+
+### h) Basic SSRF against the local server
+
+SSRF:ssä tarkoitus manipuloida sovelluksen lähettämiä HTTP pyyntöjä ja saada sitä kautta kyseiset pyynnöt lähetettyä sisäisille tai luotettaville palvelimille. Tässä tarkoituksena saada pyynnöt lähetettyä paikalliselle palvelimelle ja poistaa käyttäjä carlos. Tehtävässä käskettiin tarkastelemaan varastosaldoja, mistä saataisiin mielenkiintoisia GET pyyntöjä. 
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/001f6960-3f69-4619-bdac-63b6a7c6f913)
+
+Varastosaldo pyyntö löydetty ZAP:ista. Seuraavaksi pyyntöä pitäisi muokata requester tabissa, jotta saataisiin pyynnöt kohteeseen /localhost/admin. Minkä kautta päästäisiin adminille tuhoamaan carlos.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/c5267767-7603-424a-866d-bfad225c6488)
+
+wiineri ja carlos löytyi responsesta!
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/e1a516d7-2897-47ee-9ccd-c5fa2b90318b)
+
+Carlosin vuoro lähteä, sorry buddy.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/09f95112-6d47-4101-acc1-61790b4a97ce)
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/dca058a8-5963-49f7-97ee-ee4287c2ab17)
+
+
+
+
+
+
+
 
 
 
