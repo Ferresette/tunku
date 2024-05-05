@@ -184,6 +184,33 @@ Carlosin vuoro lähteä, sorry buddy.
 
 ![image](https://github.com/Ferresette/tunku/assets/148973799/dca058a8-5963-49f7-97ee-ee4287c2ab17)
 
+- Cross Site Scripting (XSS)
+
+
+### i) Reflected XSS into HTML context with nothing encoded
+
+Käsitellään käyttäjän haitallista syötettä, tässä käytetään javascript koodia haitallisena koodina, mikä pitäisi sisältyä html-vastaukseen. Eli opetuksena olisi sovelluksen oikea oppinen syötteen validointi ja pyrkiä käyttämään turvallisia koodausmenetelmiä. Kokeilin ensiksi vain kirjottaa jotain, että näkisin miltä tulostus näyttää.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/276083d6-e6e2-45bd-b211-e9fc0691d939)
+
+Ei tulosta! Kokeillaan tehtävänannossa tarjottua koodin pätkää sen sijaan, minkä jälkeen homma näyttäisi taas pelittävän.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/7bb0731a-0995-48cd-9d02-49c1640ee3fc)
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/a1b8cb06-dd8c-4767-bc2f-e357e818dc27)
+
+
+### j) Stored XSS into HTML context with nothing encoded
+
+Samankaltainen kun edellinen, mutta tässä tallennetaan sovelluksen tietokantaan ja toistetaan myöhemmin käyttäjän selaimessa. Eli haitallinen koodi sisällytetään HTML-vastaukseen käsittääkseni.
+Täytettiin kommenttikenttään esimerkki koodinpätkä, lisättiin nimi ja sähköposti.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/d669febe-9a40-497a-a0f8-63dfad63592c)
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/e09b7d02-f978-469f-955c-4d6e1fcec281)
+
+
+
 
 
 
