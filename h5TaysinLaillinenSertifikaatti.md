@@ -235,21 +235,21 @@ Sunnuntai 4.05 ei enään puhti riittänyt lähteä ratkomaan WebGoat tehtäviä
 
 ### References
 
-https://terokarvinen.com/2024/eettinen-hakkerointi-2024/#h5-taysin-laillinen-sertifikaatti
-https://terokarvinen.com/2023/webgoat-2023-4-ethical-web-hacking/
-https://github.com/ffuf/pencode
-https://chat.openai.com/
-https://techofide.com/blogs/how-to-install-owasp-zap-on-windows-and-linux/
-https://rkhal101.github.io/_posts/WAVS/ZAP/zap_browser_setup
-https://stackoverflow.com/questions/46686570/owasp-zap-not-showing-requests-to-images-in-history-view
-https://help.getfoxyproxy.org/index.php/knowledge-base/url-patterns/#wildcards
-https://portswigger.net/web-security/access-control/lab-insecure-direct-object-references
-https://portswigger.net/web-security/file-path-traversal/lab-simple
-https://portswigger.net/web-security/file-path-traversal/lab-absolute-path-bypass
-https://portswigger.net/web-security/file-path-traversal/lab-sequences-stripped-non-recursively
-https://portswigger.net/web-security/ssrf/lab-basic-ssrf-against-localhost
-https://portswigger.net/web-security/cross-site-scripting/reflected/lab-html-context-nothing-encoded
-https://portswigger.net/web-security/cross-site-scripting/stored/lab-html-context-nothing-encoded
+- https://terokarvinen.com/2024/eettinen-hakkerointi-2024/#h5-taysin-laillinen-sertifikaatti
+- https://terokarvinen.com/2023/webgoat-2023-4-ethical-web-hacking/
+- https://github.com/ffuf/pencode
+- https://chat.openai.com/
+- https://techofide.com/blogs/how-to-install-owasp-zap-on-windows-and-linux/
+- https://rkhal101.github.io/_posts/WAVS/ZAP/zap_browser_setup
+- https://stackoverflow.com/questions/46686570/owasp-zap-not-showing-requests-to-images-in-history-view
+- https://help.getfoxyproxy.org/index.php/knowledge-base/url-patterns/#wildcards
+- https://portswigger.net/web-security/access-control/lab-insecure-direct-object-references
+- https://portswigger.net/web-security/file-path-traversal/lab-simple
+- https://portswigger.net/web-security/file-path-traversal/lab-absolute-path-bypass
+- https://portswigger.net/web-security/file-path-traversal/lab-sequences-stripped-non-recursively
+- https://portswigger.net/web-security/ssrf/lab-basic-ssrf-against-localhost
+- https://portswigger.net/web-security/cross-site-scripting/reflected/lab-html-context-nothing-encoded
+- https://portswigger.net/web-security/cross-site-scripting/stored/lab-html-context-nothing-encoded
 
 
 
