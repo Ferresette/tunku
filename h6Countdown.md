@@ -33,7 +33,7 @@ Lähde: https://www.freecodecamp.org/news/what-is-nmap-and-how-to-use-it-a-tutor
 
 #### Hashcat
 
-Hashcat on avoimen lähdekoodin salasanojen murtamiseen tarkoitettu työkalu. Hyödyntää sanakirjapohjaisia hyökkäyksiä salasanojen paljastamiseen. Kyky purkaa salasanat erilaisista tiivistefunktioista, esim MD5, SHA-1, SHA-256.
+Hashcat on avoimen lähdekoodin salasanojen murtamiseen tarkoitettu työkalu. Hyödyntää sanakirjapohjaisia hyökkäyksiä salasanojen paljastamiseen. Kyky purkaa salasanat erilaisista tiivistefunktioista, esim MD5, SHA-1, SHA-256. Hashcat löytyy oletuksena KaliLinuxista.
 
 Komentoja, mitkä koen hyödylliseksi Hashcatin käytössä:
 
@@ -46,11 +46,18 @@ Komentoja, mitkä koen hyödylliseksi Hashcatin käytössä:
          - rm rockyou.txt.tar.gz # Poistaa alkuperäisen pakatun tiedoston, sille ei ole enään tarvettu kun se on purettu.
    
  - **hashid -m "esimerkki hash"** # tämä komento pyrkii selvittämään mitä tiivistefunktiota esimerkki tiiviste käyttää.
- - **hashcat -m 0 '6b1628b016dff46e6fa35684be6acc96' rockyou.txt -o solved** # Edellisen komennon jäljiltä ollaan saatu erilaisia tiivistefunktioita, joten tässä komennossa "-m 0" tarkoittaa MD5 tiivistettä. Heittomerkeillä pyritään myös tunnistamaan tiivisteet, missä on erikoismerkkejä. Hyödynnetään "rockyou.txt" sanaluetteloa ja tallennetaan kansioon solved.
+ - **hashcat -m 0 '6b1628b016dff46e6fa35684be6acc96' rockyou.txt -o tiedostomihintallennetaan** # Edellisen komennon jäljiltä ollaan saatu erilaisia tiivistefunktioita, joten tässä komennossa "-m 0" tarkoittaa MD5 tiivistettä. Heittomerkeillä pyritään myös tunnistamaan tiivisteet, missä on erikoismerkkejä. Hyödynnetään "rockyou.txt" sanaluetteloa ja tallennetaan nimemämään kansioon.
 
  Löysin myös mielenkiintoisen kaavion eri tyyleistä suorittaa kyseinen hashid komento, riippuen hieman mitä hyökkäystyyliä käyttää.
 
  ![image](https://github.com/Ferresette/tunku/assets/148973799/2fb693e1-84e2-4061-9b9d-a7820d86adc4)
+
+ - **cat "tiedostomihintallennettu"** # Näyttää crackatun salasanan hashin perässä jos onnistunut.
+ - **hashcat -m 0 "esimerkki hash" rockyou.txt --show** # näyttää suoraan crackatun salasanan command linessa ilman tallentamista.
+
+Lähteet: https://terokarvinen.com/2022/cracking-passwords-with-hashcat/ | https://www.freecodecamp.org/news/hacking-with-hashcat-a-practical-guide/ | https://hashcat.net/wiki/doku.php?id=hashcat
+
+#### John the Ripper
 
 
 
