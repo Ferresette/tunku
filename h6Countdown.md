@@ -94,12 +94,18 @@ Halusin myös hyödyntää Teron sivuilla olevaa tapaa käyttä Johnia.
 
  #### Ffuf
 
- Ffuf on verkkofuzzeri, mikä on kirjoitettu GO ohjelmointikielellä. Nopein avoimen lähteen fuzzaus työkalu.
- 
+ Ffuf on verkkofuzzeri, mikä on kirjoitettu GO ohjelmointikielellä. Nopein avoimen lähteen fuzzaus työkalu. Ffuf pitäisi löytyä myös KaliLinuxista lähtökohtaisesti, mutta tässä ohjeet asennukseen.  
+ Tarvitaan Urlia ja Weblistoja ffufin käyttämiseen.
 
+     $ wget https://github.com/ffuf/ffuf/releases/download/v2.0.0/ffuf_2.0.0_linux_amd64.tar.gz # Lataa ffufin githubin reposta.
+     $ tar -xf ffuf_2.0.0_linux_amd64.tar.gz # purkaa kyseisen tiedoston
 
+ Seuraavaksi komentoihin:
 
-
-
-
-    
+  - **$ ffuf -h** # Avaa help sivut
+  - **$ wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/common.txt** # Lataa suositun SecList sanalistan.
+  - **$ fuff** # Nähdään kaikki parametrit
+  - **$ ffuf |& less** # Suorittaa ffufin ja ohjaa sen putkeen, jotta voit tutkailla sitä interaktiivisesti.
+  - **$ ./ffuf -w common.txt -u http://127.0.0.2:8000/FUZZ** # Käyttää common.txt sanalistaa ja siinä olevaa urlia fuzzaamiseen.
+  - **ffuf -u http://localhost:3000/FUZZ -w /usr/share/wordlists/SecLists/Discovery/Web-Content/big.txt** # tässä vähän erilainen tapa ajaa komento, käyttää absoluuttista polkua. Luulen, että missä järjestyksessä url ja sanalistat on lajiteltu ei pitäisi olla vaikutusta.
+  - 
