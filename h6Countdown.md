@@ -73,22 +73,22 @@ Halusin myös hyödyntää Teron sivuilla olevaa tapaa käyttä Johnia.
     $ ./configure # Tunnistaa ympäristön, tärkeää on, että john löytyy kyseisestä directorysta.
     $ make -s clean && make -sj4 # Poistaa aikaisemmat väliaikaset tiedostot eli käytännössä puhdistaa sen, jotta voidaan aloittaa puhtaaltapöydältä. Käynnistää myös uudelleen rakennus prosessin silent       modessa.
 
- -**$ wget https://TeroKarvinen.com/2023/crack-file-password-with-john/tero.zip** # Tämä lataa zip tiedoston, mitä voidaan käyttää john the ripperillä. Esimerkkinä teron linkki.
- -**$ unzip tero.zip** # Kyseisellä komenolla voidaan kokeilla avata zip tiedostoa. Tulostaa informaatiota, mutta vaaditaan hieman muuta informaatiota sen lisäksi.
- -**zip2john tero.zip >tero.zip.hash** # Tämä purkaa hashin uuteen tiedostoon
- -**john tero.zip.hash** # Suorittaa hyökkäyksen crackatakseen hashit. Onnistuneena saadaan salasana näkyviin, mitä monimutkaisempi salasana sitä pitempään sillä kestää suorittaa komento.
+  - **$ wget https://TeroKarvinen.com/2023/crack-file-password-with-john/tero.zip** # Tämä lataa zip tiedoston, mitä voidaan käyttää john the ripperillä. Esimerkkinä teron linkki.
+  - **$ unzip tero.zip** # Kyseisellä komenolla voidaan kokeilla avata zip tiedostoa. Tulostaa informaatiota, mutta vaaditaan hieman muuta informaatiota sen lisäksi.
+  - **zip2john tero.zip >tero.zip.hash** # Tämä purkaa hashin uuteen tiedostoon
+  - **john tero.zip.hash** # Suorittaa hyökkäyksen crackatakseen hashit. Onnistuneena saadaan salasana näkyviin, mitä monimutkaisempi salasana sitä pitempään sillä kestää suorittaa komento.
 
  Näiden toimintojen suoritettua, tulostuksesta nähdään arvokasta informaatiota. Voidaan silmäillä tiedostoja ja kokeilla unzippaamista uudelleen milloin sen pitäisi toimia ja ollaan onnistuttu   
  tehtävässä.
 
  Voidaan myös käyttää muitakin tapoja JTR:ssä, esimerkiksi single crack metodi.
 
- -**$ john --single --format=raw-sha1 crack.txt** # Yrittää murtaa SHA-1 muotoisen tiivisteen, mikä on tallennettuna crack.txt.
- -**$ john --wordlist=/usr/share/wordlists/rockyou.txt --format=raw-sha1 crack.txt** # Käyttää sanalistaa salasanan murtautumiseen, sama idea kuin aikaisemmassa. Crack.txt tiedostossa hash, mitä yritetään murtaa.
- -**$ john -i:digits passwordfile.txt** # Käyttää incremental modea, mikä on voimakkain käytäntö. Kokeilee kaikkia mahdollisia yhdistelmiä, minkä takia voi kestää todella kauan. Tähän voi lisätä formaatin, mikä vähän nopeuttaa johnin toimintaa.
- -**$ john --format=lm crack.txt** # Murtaa windows salasanoja, on eri SAM databasessa eli myös käyttää eri formaattia (LM/NTML).
- -**$ unshadow /etc/passwd /etc/shadow > output.db** # Linuxissa on etc folderiin sisältyy kaksi hyvää tiedostoa passwd sekä shadow. Tämä komento yhdistää molempien sisällön output.db tiedostoon.
- -**$ john output.db** # Voidaan crackata kyseinen tiedosto
+ - **$ john --single --format=raw-sha1 crack.txt** # Yrittää murtaa SHA-1 muotoisen tiivisteen, mikä on tallennettuna crack.txt.
+ - **$ john --wordlist=/usr/share/wordlists/rockyou.txt --format=raw-sha1 crack.txt** # Käyttää sanalistaa salasanan murtautumiseen, sama idea kuin aikaisemmassa. Crack.txt tiedostossa hash, mitä yritetään murtaa.
+ - **$ john -i:digits passwordfile.txt** # Käyttää incremental modea, mikä on voimakkain käytäntö. Kokeilee kaikkia mahdollisia yhdistelmiä, minkä takia voi kestää todella kauan. Tähän voi lisätä formaatin, mikä vähän nopeuttaa johnin toimintaa.
+ - **$ john --format=lm crack.txt** # Murtaa windows salasanoja, on eri SAM databasessa eli myös käyttää eri formaattia (LM/NTML).
+ - **$ unshadow /etc/passwd /etc/shadow > output.db** # Linuxissa on etc folderiin sisältyy kaksi hyvää tiedostoa passwd sekä shadow. Tämä komento yhdistää molempien sisällön output.db tiedostoon.
+ - **$ john output.db** # Voidaan crackata kyseinen tiedosto
 
  Lähteet: https://terokarvinen.com/2023/crack-file-password-with-john/ | https://www.freecodecamp.org/news/crack-passwords-using-john-the-ripper-pentesting-tutorial/
  
