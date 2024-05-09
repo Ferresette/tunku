@@ -108,4 +108,8 @@ Halusin myös hyödyntää Teron sivuilla olevaa tapaa käyttä Johnia.
   - **$ ffuf |& less** # Suorittaa ffufin ja ohjaa sen putkeen, jotta voit tutkailla sitä interaktiivisesti.
   - **$ ./ffuf -w common.txt -u http://127.0.0.2:8000/FUZZ** # Käyttää common.txt sanalistaa ja siinä olevaa urlia fuzzaamiseen.
   - **ffuf -u http://localhost:3000/FUZZ -w /usr/share/wordlists/SecLists/Discovery/Web-Content/big.txt** # tässä vähän erilainen tapa ajaa komento, käyttää absoluuttista polkua. Luulen, että missä järjestyksessä url ja sanalistat on lajiteltu ei pitäisi olla vaikutusta.
-  - 
+
+[Teron sivuilta ](https://terokarvinen.com/2023/fuzz-urls-find-hidden-directories/)löyty niin hyvä kuva filtteröinti ominaisuuksiin niin halusin lisätä sen vielä tähän.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/1b85d4ef-640f-4899-adc6-ae01056721eb)
+
