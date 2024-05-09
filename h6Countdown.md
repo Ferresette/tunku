@@ -91,6 +91,10 @@ Halusin myös hyödyntää Teron sivuilla olevaa tapaa käyttä Johnia.
  - **$ john output.db** # Voidaan crackata kyseinen tiedosto
 
  Lähteet: https://terokarvinen.com/2023/crack-file-password-with-john/ | https://www.freecodecamp.org/news/crack-passwords-using-john-the-ripper-pentesting-tutorial/
+
+ #### Ffuf
+
+ Ffuf on verkkofuzzeri, mikä on kirjoitettu GO ohjelmointikielellä. Nopein avoimen lähteen fuzzaus työkalu.
  
 
 
