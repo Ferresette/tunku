@@ -108,8 +108,31 @@ Halusin myös hyödyntää Teron sivuilla olevaa tapaa käyttä Johnia.
   - **$ ffuf |& less** # Suorittaa ffufin ja ohjaa sen putkeen, jotta voit tutkailla sitä interaktiivisesti.
   - **$ ./ffuf -w common.txt -u http://127.0.0.2:8000/FUZZ** # Käyttää common.txt sanalistaa ja siinä olevaa urlia fuzzaamiseen.
   - **ffuf -u http://localhost:3000/FUZZ -w /usr/share/wordlists/SecLists/Discovery/Web-Content/big.txt** # tässä vähän erilainen tapa ajaa komento, käyttää absoluuttista polkua. Luulen, että missä järjestyksessä url ja sanalistat on lajiteltu ei pitäisi olla vaikutusta.
+  - **ffuf -u http://localhost:3000/FUZZ -w /usr/share/wordlists/SecLists/Discovery/Web-Content/raft-medium-words-lowercase.txt -e .php,.html,.txt** # Etsii tiettyjä tiedostomuotoja
 
 [Teron sivuilta ](https://terokarvinen.com/2023/fuzz-urls-find-hidden-directories/)löyty niin hyvä kuva filtteröinti ominaisuuksiin niin halusin lisätä sen vielä tähän.
 
 ![image](https://github.com/Ferresette/tunku/assets/148973799/1b85d4ef-640f-4899-adc6-ae01056721eb)
+
+Sen lisäksi halusin vielä laittaa muutamia asioita Ffuf:in toiminnasta docker.io maalien kanssa.
+
+    $ sudo apt-get update # hakee päivitykset
+    $ sudo apt-get install docker.io git ffuf # asentaa targetin ja ffufin
+    $ git clone https://github.com/adamtlangley/ffufme # kloonaa ffufme projektin
+    $ cd ffufme/ # vaihtaa kyseiseen hakemistoon
+    $ sudo docker build -t ffufme # rakentaa docker kontin ffufme projektille
+    $ sudo docker run -d -p 80:80 ffufme # käynnistää Ffufme sovelluksen docker kontissa, ja ohjaa kontin portin isäntäkoneen porttiin.
+    $ sudo ss -lptn|tr -s ' ' # Näyttää avoimet TCP kuunteluportit  järjestyksessä sekä poistaa peräkkäiset välilyönnit tulosteesta. Eli saadaan selkeämpi tulostus.
+
+
+Wordlistojen latausta kyseisiä harjoituksia varten.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/2033fb78-612c-4cba-96a1-d97aa61f4a7e)
+
+Huom! Vain yksi daemon voi kuunnella porttia, joten 
+
+    $ sudo systemctl disable --now apache2.service # poistaa automaatisen käynnistyskäskyn apache2:selle ja pysäyttää sen heti.
+
+
+Lähteet: https://terokarvinen.com/2023/fuzz-urls-find-hidden-directories/ | https://www.freecodecamp.org/news/web-security-fuzz-web-applications-using-ffuf/ | https://terokarvinen.com/2023/fuffme-web-fuzzing-target-debian/
 
