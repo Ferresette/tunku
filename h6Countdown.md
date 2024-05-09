@@ -44,6 +44,14 @@ Komentoja, mitkä koen hyödylliseksi Hashcatin käytössä:
          - wget https://github.com/danielmiessler/SecLists/raw/master/Passwords/Leaked-Databases/rockyou.txt.tar.gz # Lataa yleisimmän salasanakirjan "rockyou.txt".
          - tar xf rockyou.txt.tar.gz # Purkaa kyseisen tiedoston
          - rm rockyou.txt.tar.gz # Poistaa alkuperäisen pakatun tiedoston, sille ei ole enään tarvettu kun se on purettu.
+   
+ - **hashid -m "esimerkki hash"** # tämä komento pyrkii selvittämään mitä tiivistefunktiota esimerkki tiiviste käyttää.
+ - **hashcat -m 0 '6b1628b016dff46e6fa35684be6acc96' rockyou.txt -o solved** # Edellisen komennon jäljiltä ollaan saatu erilaisia tiivistefunktioita, joten tässä komennossa "-m 0" tarkoittaa MD5 tiivistettä. Heittomerkeillä pyritään myös tunnistamaan tiivisteet, missä on erikoismerkkejä. Hyödynnetään "rockyou.txt" sanaluetteloa ja tallennetaan kansioon solved.
+
+ Löysin myös mielenkiintoisen kaavion eri tyyleistä suorittaa kyseinen hashid komento, riippuen hieman mitä hyökkäystyyliä käyttää.
+
+ ![image](https://github.com/Ferresette/tunku/assets/148973799/2fb693e1-84e2-4061-9b9d-a7820d86adc4)
+
 
 
 
