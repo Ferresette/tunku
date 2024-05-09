@@ -17,7 +17,7 @@ Suurimmassa osassa komennoista suosittelisin vielä käyttämään ___sudo___ om
 Komentoja, mitkä koen henkilökohtaisesti hyödylliseksi Nmapissa:
 
 - **nmap -h / man nmap**  # Molemmat komennot antavat laajasti tietoa nmapin komennoista.
-- **nmap -sp 192.168.1.1/24** # Tekee Ping scan:in, tekee listan käynnissä olevista aliverkoista
+- **nmap -sp 192.168.1.1/24** # Tekee Ping scan:in, tulostaa listan käynnissä olevista aliverkoista
 - **nmap scanme.nmap.org** # Skannaa single hostin 1000 yleisintä porttia.
 - **nmap -p- 127.0.0.1** # Voit myös skannata halutessasi kaikki portit
 - **nmap -sS scanme.nmap.org** # Lähettää SYN paketteja ja analysoi vastauksen. SYN/ACK saatuaan on tieto, että portti on auki ja mahdollisuus avata TCP yhteys. Voi olla aika hidas skannausmetodi.
