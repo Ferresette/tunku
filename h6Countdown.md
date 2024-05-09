@@ -140,51 +140,51 @@ Lähteet: https://terokarvinen.com/2023/fuzz-urls-find-hidden-directories/ | htt
 
 Työkalu mikä payloadin koodausketjuja. https://github.com/ffuf/pencode sivulta löytyi hyvät ohjeet tämän käyttöön. Alapuolella latauskomennot.
 
- - **sudo apt install golang-go**
- - **go install github.com/ffuf/pencode/cmd/pencode@latest**
+- **sudo apt install golang-go**
+- **go install github.com/ffuf/pencode/cmd/pencode@latest**
 
-    pencode - complex payload encoder v0.4
-    
-    Usage: ./pencode FUNC1 FUNC2 FUNC3...
-    
-    ./pencode reads input from stdin by default, which is typically piped from another process.
-    
-    OPTIONS:
-    -input reads input from a file, line by line.
-    
-    ENCODERS
-      b64encode         - Base64 encoder
-      hexencode         - Hex string encoder
-      htmlescape        - HTML escape
-      jsonescape        - JSON escape
-      unicodeencodeall  - Unicode escape string encode (all characters)
-      urlencode         - URL encode reserved characters
-      urlencodeall      - URL encode all characters
-      utf16             - UTF-16 encoder (Little Endian)
-      utf16be           - UTF-16 encoder (Big Endian)
-      xmlescape         - XML escape
-    
-    DECODERS
-      b64decode         - Base64 decoder
-      hexdecode         - Hex string decoder
-      htmlunescape      - HTML unescape
-      jsonunescape      - JSON unescape
-      unicodedecode     - Unicode escape string decode
-      urldecode         - URL decode
-      xmlunescape       - XML unescape
-    
-    HASHES
-      md5               - MD5 sum
-      sha1              - SHA1 checksum
-      sha224            - SHA224 checksum
-      sha256            - SHA256 checksum
-      sha384            - SHA384 checksum
-      sha512            - SHA512 checksum
-    
-    OTHER
-      filename.tmpl     - Replaces string #PAYLOAD# in content of a file that has .tmpl extension.
-      lower             - Convert string to lowercase
-      upper             - Convert string to uppercase
+       pencode - complex payload encoder v0.4
+           
+       Usage: ./pencode FUNC1 FUNC2 FUNC3...
+           
+       ./pencode reads input from stdin by default, which is typically piped from another process.
+           
+       OPTIONS:
+       -input reads input from a file, line by line.
+           
+       ENCODERS
+       b64encode         - Base64 encoder
+       hexencode         - Hex string encoder
+       htmlescape        - HTML escape
+       jsonescape        - JSON escape
+       unicodeencodeall  - Unicode escape string encode (all characters)
+       urlencode         - URL encode reserved characters
+       urlencodeall      - URL encode all characters
+       utf16             - UTF-16 encoder (Little Endian)
+       utf16be           - UTF-16 encoder (Big Endian)
+       xmlescape         - XML escape
+           
+       DECODERS
+       b64decode         - Base64 decoder
+       hexdecode         - Hex string decoder
+       htmlunescape      - HTML unescape
+       jsonunescape      - JSON unescape
+       unicodedecode     - Unicode escape string decode
+       urldecode         - URL decode
+       xmlunescape       - XML unescape
+           
+       HASHES
+       md5               - MD5 sum
+       sha1              - SHA1 checksum
+       sha224            - SHA224 checksum
+       sha256            - SHA256 checksum
+       sha384            - SHA384 checksum
+       sha512            - SHA512 checksum
+           
+       OTHER
+       filename.tmpl     - Replaces string #PAYLOAD# in content of a file that has .tmpl extension.
+       lower             - Convert string to lowercase
+       upper             - Convert string to uppercase
 
 
 Lähteet: https://github.com/ffuf/pencode
