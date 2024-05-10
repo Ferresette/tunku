@@ -248,3 +248,54 @@ https://www.tandfonline.com/doi/full/10.1080/08839514.2022.2037254
 
 ![image](https://github.com/Ferresette/tunku/assets/148973799/b2bb4503-874b-4e0f-834e-f7c5c2090b61)
 
+- Tutkimus tutki tekoälyn hyökkäystekniikoita ja niiden käyttöä kyberhyökkäyksissä.
+- Tekoälyä käytetään hyökkäysten nopeuttamiseen ja laajentamiseen.
+- 56 prosenttia havaituista tekoälylähtöisistä verkkohyökkäystekniikoista toteutettiin muunnetun kyberturvallisuuden tappoketjun pääsy- ja tunkeutumisvaiheessa, 12 prosenttia hyödyntämis- ja C2-vaiheessa, 11 prosenttia tiedusteluvaiheessa ja 9 prosenttia toimitusvaiheessa.
+- CNN:llä on eniten esiintymisiä (viisi) niistä tekoälytekniikoista, joita valitut tekijät ovat käyttäneet pääsy- ja tunkeutumishyökkäysten havainnollistamiseen.
+- Tulokset osoittavat, että perinteisten kyberturvallisuustekniikoiden kyvyttömyys havaita ja lieventää tekoälyohjattuja hyökkäyksiä liittyy suoraan niiden kyvyttömyyteen selviytyä tekoälyohjattujen hyökkäysten nopeudesta, monimutkaisesta päätöksentekologiikasta ja monivarianttien luonteesta.
+- Näiden hyökkäysten ilmetessä, organisaatioiden tulisi nopeasti pystyä reagoimaan sekä uudistamaan strategioitaan puolustuksen suhteen.
+
+
+### c) Valmiina lipunryöstöön.
+
+Tarkoitukseni on käyttää KaliLinuxia tulevassa lipunryöstössä, joten siellä on lähtökohtaisesti kaikki ladattuna. Halusin vielä käydä varmistamassa, että docker toimii. Näyttäisi toimivan, eli eiköhän olla valmiita. Ainakin jollain tasolla.
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/69ad46eb-c094-4d1d-9ce3-7801403c12f1)
+
+**Koitan mahdollisesti vielä lisätä joitain hyödyllisiä komentoja Cheatsheetiin jos kerkeän sunnuntaina.**
+
+
+### References
+
+https://terokarvinen.com/2024/eettinen-hakkerointi-2024/
+
+https://www.freecodecamp.org/news/what-is-nmap-and-how-to-use-it-a-tutorial-for-the-greatest-scanning-tool-of-all-time/
+
+https://terokarvinen.com/2022/cracking-passwords-with-hashcat/
+
+https://www.freecodecamp.org/news/hacking-with-hashcat-a-practical-guide/
+
+https://hashcat.net/wiki/doku.php?id=hashcat
+
+https://terokarvinen.com/2023/crack-file-password-with-john/
+
+https://www.freecodecamp.org/news/crack-passwords-using-john-the-ripper-pentesting-tutorial/
+
+https://terokarvinen.com/2023/fuzz-urls-find-hidden-directories/
+
+https://www.freecodecamp.org/news/web-security-fuzz-web-applications-using-ffuf/
+
+https://terokarvinen.com/2023/fuffme-web-fuzzing-target-debian/
+
+https://github.com/ffuf/pencode
+
+https://www.kali.org/docs/tools/starting-metasploit-framework-in-kali/
+
+https://docs.metasploit.com/docs/using-metasploit/basics/how-to-use-msfvenom.html
+
+https://book.hacktricks.xyz/generic-methodologies-and-resources/shells/msfvenom
+
+https://www.tandfonline.com/doi/full/10.1080/08839514.2022.2037254
+
+https://www.tsv.fi/julkaisufoorumi/
+
