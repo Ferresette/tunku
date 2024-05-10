@@ -231,10 +231,20 @@ Multi/handlerin käyttöä ja hyödyllisiä msf komentoja.
      msf6 > shell # menee shelliin
      msf6 > show exploits # näyttää exploitit
      msf6 > show payloads # näyttää payloadit
+
+
+
      
 
 
 
 
 Lähteet: https://www.kali.org/docs/tools/starting-metasploit-framework-in-kali/ | https://docs.metasploit.com/docs/using-metasploit/basics/how-to-use-msfvenom.html | https://book.hacktricks.xyz/generic-methodologies-and-resources/shells/msfvenom
+
+### b) Review.
+
+The Emerging Threat of Ai-driven Cyber Attacks: A Review:
+https://www.tandfonline.com/doi/full/10.1080/08839514.2022.2037254
+
+![image](https://github.com/Ferresette/tunku/assets/148973799/b2bb4503-874b-4e0f-834e-f7c5c2090b61)
 
